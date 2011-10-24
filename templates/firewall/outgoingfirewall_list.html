@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Reglas de Firewall - {% endblock %}
+{% block content %}
+<table cellspacing="0" class="list">
+	<tr>
+		<th>Regla</th>
+		<th>Protocolo</th>
+		<th>Descripción</th>
+		<th>Origen</th>
+		<th>Destino</th>
+		<th>Puerto</th>
+		<th>Estado</th>
+	</tr>
+	{% for outgoingfirewall in object_list %}
+	<tr>
+		<td><a href="{% url outgoingfirewall-detail outgoingfirewall.id %}">{{ outgoingfirewall.id }}</a></td>
+		<td>{{ outgoingfirewall.protocol }}</td>
+		<td><a href="{% url outgoingfirewall-detail outgoingfirewall.id %}">{{ outgoingfirewall.description }}</a></td>
+		<td>{{ outgoingfirewall.source_ip_address }}</td>
+		<td>{{ outgoingfirewall.destination }}</td>
+		<td>{{ outgoingfirewall.destination_port }}</td>
+		<td>{{ outgoingfirewall.status }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<form action="" method="post">
+	{{ form.as_p }}
+	<p><input type="submit" value="Generar!"></p>
+</form>
+
+{% endblock %}
+
+

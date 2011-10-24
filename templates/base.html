@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}VooDoo VoIP Firewall</title>
+		<link rel="stylesheet" href="{{ MEDIA_URL }}style.css" type="text/css" media="screen" />
+	</head>
+	<body>
+	        <div id="header">
+			<div class="col w5 bottomlast">
+				<a href="" class="logo">
+					<img src="{{ MEDIA_URL }}/images/logo.jpg" alt="Logo" />
+				</a>
+			</div>
+
+			<div class="col w5 last right bottomlast">
+			        <div id="hd">
+			            <h1>OpenSource VoIPv6 Firewall.</span></h1>
+			            <p></p>
+		                </div>
+			    <p class="last">Logged in as <span class="strong">Admin,</span> <a href="">Logout</a></p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div id="wrapper">
+			<div id="minwidth">
+				<div id="holder">
+		                    <div id="menu">
+			                <div id="left"></div>
+                                                <ul>
+							<li>
+								<a href="{% url outgoingfirewall-list %}" class="sel">Reglas de Salida</a>
+							</li>
+							<li>
+								<a href="/admin/">Reglas de Entrada</a>
+							</li>
+							<li>
+								<a href="/admin/">Admin Site</a>
+							</li>
+						</ul>
+			                <div id="right"></div>
+
+						<div class="clear"></div>
+					</div>
+		</div>
+
+		<div id="submenu">
+						<div class="modules_left">
+							<div class="clear"></div>
+
+						</div>
+						<div class="title">
+							<p>{% block titulo %}{% endblock %}Firewall de Salida</p>
+						</div>
+						<div class="modules_right">
+						</div>
+					</div>
+
+
+
+
+
+
+
+		</div>
+		<div id="bd">
+			{% block content %}{% endblock %}
+		</div>
+		</div>
+
+
+		<div id="ft">
+			<p>VooDoo VoIPv6 Firewall is &copy;2011 by Daniel Rodriguez & Andrés Gómez</p>
+		</div>
+	</body>
+</html>

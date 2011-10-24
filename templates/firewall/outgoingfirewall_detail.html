@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Ticket #{{ ticket.id }} - {% endblock %}
+{% block content %}
+<h2>Regla #{{ object.id }} <span>{{ object.status }}</span></h2>
+<div class="ticket">
+	<h2>Information</h2>
+	<div class="date">
+		<p class="cr">Descripción: {{ object.description }} ago</p>
+		<p class="up">Ultima modificacion {{ object.updated_on }} ago</p>
+	</div>
+	<div class="clear">&nbsp;</div>
+	<div class="block w49 left">
+		<p class="pri title">Priority</p>
+		<p class="pri">{{object.source_ip_address}}</p>
+	</div>
+	<div class="block w49 right">
+		<p class="ass title">Assigned to</p>
+		<p class="ass">{{ object.destination }}</p>
+	</div>
+	<div class="block w49 right">
+		<p class="ass title">Assigned to</p>
+		<p class="ass">{{ object.protocol }}</p>
+	</div>
+	<div class="clear">&nbsp;</div>
+	<div class="block">
+		<p class="des title">Description</p>
+		<p class="des">{{ object.description }}</p>
+	</div>
+</div>
+{% endblock %}
